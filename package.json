@@ -4,15 +4,24 @@
     "description": "HelpNet - The Real Use of Internet",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "NODE_ENV=development nodemon index.js"
     },
     "author": "Suman Mahato",
     "license": "ISC",
     "dependencies": {
+        "aadhaar-validator": "^1.1.0",
+        "axios": "^0.19.1",
         "bcrypt": "^3.0.7",
         "body-parser": "^1.19.0",
+        "cookie-session": "^1.4.0",
         "express": "^4.17.1",
         "jsonwebtoken": "^8.5.1",
-        "mongoose": "^5.8.5"
+        "mongoose": "^5.8.5",
+        "passport": "^0.4.1",
+        "passport-google-oauth20": "^2.0.0"
+    },
+    "devDependencies": {
+        "morgan": "^1.9.1"
     }
 }

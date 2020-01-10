@@ -5,7 +5,6 @@ exports.login = async function(req, res, next) {
     try {
         const user = await User.findOne({ email: req.body.email });
         const isMatch = await user.comparePassword(req.body.password);
-        console.log(req.body.password);
 
         if (isMatch) {
             const token = user.generateAuthToken();
@@ -29,9 +28,7 @@ exports.signup = async function(req, res, next) {
     try {
         const user = await new User({
             email: req.body.email,
-            password: req.body.password,
-            name: req.body.name,
-            aadharNo: req.body.aadhaarNo
+            password: req.body.password
         }).save();
         const token = user.generateAuthToken();
 

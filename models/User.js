@@ -31,6 +31,9 @@ const userSchema = new mongoose.Schema(
         },
         profileImageUrl: {
             type: String
+        },
+        googleId: {
+            type: String
         }
     },
     { timestamps: true }
@@ -62,9 +65,7 @@ userSchema.methods.generateAuthToken = function() {
     const token = jwt.sign(
         {
             _id: this._id,
-            name: this.name,
-            email: this.email,
-            aadhaarNo: this.aadhaarNo
+            email: this.email
         },
         keys.jwtPrivateKey
     );
