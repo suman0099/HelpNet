@@ -16,12 +16,9 @@ router.get(
 
 router.get("/google/callback", passport.authenticate("google"), (req, res) => {
     //console.log(req.user);
-    const user = req.user;
-    const token = user.generateAuthToken();
-    return res.status(200).json({
-        user,
-        token
-    });
+    // const user = req.user;
+    // const token = user.generateAuthToken();
+    return res.redirect("/");
 });
 
 router.get("/logout", (req, res) => {

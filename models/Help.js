@@ -23,6 +23,9 @@ const helpSchema = new mongoose.Schema(
             maxlength: 5,
             default: 0
         },
+        description: {
+            type: String
+        },
         paid: {
             type: Boolean,
             default: false

@@ -4,8 +4,10 @@ const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const keys = require("../config/keys");
 const User = require("../models/User");
 
+// TODO -- OAUTH
 passport.serializeUser((user, done) => {
-    done(null, user.id);
+    const token = user.generateAuthToken();
+    done(null, token);
 });
 
 passport.deserializeUser((id, done) => {
